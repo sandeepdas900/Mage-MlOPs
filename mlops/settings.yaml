@@ -1,4 +1,13 @@
 projects:
+  beaming_merchant: {}
+  brilliant_familiar: {}
+  dwarven_artificer: {}
+  homework_03:
+    path: homework_03
+  humble_ancient: {}
+  original_knight: {}
+  serene_grimoire: {}
+  snowy_elixir: {}
   unit_0_setup: {}
   unit_1_data_preparation: {}
   unit_2_training: {}

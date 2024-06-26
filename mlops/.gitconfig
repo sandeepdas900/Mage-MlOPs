@@ -1,0 +1,15 @@
+f [ -d .gitconfig ]; then
+    echo ".gitconfig is a directory, it should be a file."
+    
+    # Optionally, back up the directory if it contains important data
+    mv .gitconfig .gitconfig_backup
+    
+    # (Optional) Recreate the .gitconfig with your git configuration if you have a backup
+    cp path_to_backup_gitconfig/.gitconfig .gitconfig
+    # Note: Replace "path_to_backup_gitconfig" with the actual path where you have a valid backup of .gitconfig
+    
+    # If you don't have a backup, you will need to manually configure Git again
+    git config --global user.name "sandeepdas900"
+    git config --global user.email "dassandeep0001@gmail.com"
+    # ... add other global Git configurations as needed
+fi

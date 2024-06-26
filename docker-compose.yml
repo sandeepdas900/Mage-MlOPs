@@ -5,6 +5,7 @@ services:
     build:
       context: .
     command: /app/run_app.sh mage start $PROJECT_NAME
+    
     ports:
       - 6789:6789
     volumes:
@@ -36,6 +37,16 @@ services:
       # Custom database initialization scripts (optional).
       - ./scripts/database:/docker-entrypoint-initdb.d
     restart: always
+    networks:
+      - app-network
+  mlflow:
+    build:
+      context: .
+      dockerfile: mlflow.dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - "${PWD}/mlflow:/home/mlflow/"
     networks:
       - app-network
 networks:

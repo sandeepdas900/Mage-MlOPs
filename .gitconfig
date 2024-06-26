@@ -1,0 +1,21 @@
+# Check if .gitconfig is a directory
+if [ -d /home/codespace/.gitconfig ]; then
+    # It is a directory (this is not correct), so let's back it up first
+    mv /home/codespace/.gitconfig /home/codespace/.gitconfig_backup
+fi
+
+# Now, recreate the .gitconfig file with your global Git configurations.
+# You can do this by running the git config commands or if you have a backup 
+# of your .gitconfig file, you can restore it using the cp or mv command.
+
+# Here we set global configuration as an example, adjust as per your details.
+git config --global user.name "sandeepdas900"
+git config --global user.email "dassandeep0001@gmail.com"
+# Add other global configurations as needed.
+
+# Confirm that .gitconfig is now a file
+if [ -f /home/codespace/.gitconfig ]; then
+    echo ".gitconfig is now a file with proper configuration."
+else
+    echo "Something went wrong; .gitconfig is not a file."
+fi
